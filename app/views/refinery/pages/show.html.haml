@@ -1,0 +1,21 @@
+.span12
+  -if @page.content_for(:hero_unit)
+    %section#hero_unit.hero-unit
+      =raw @page.content_for(:hero_unit)
+  -else
+    %section#title.page-header
+      %h1
+        -title=@page.title.split(' - ',2)
+        =title[0]
+        -if title[1]
+          %small= title[1]
+  .row-fluid
+    - if @page.content_for :side_body
+      %section#body.span8
+        =raw @page.content_for(:body)
+      %section#side_body.span4
+        =raw @page.content_for(:side_body)
+    -else
+      %section#body.span12
+        =raw @page.content_for(:body)
+  
