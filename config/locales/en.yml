@@ -3,3 +3,6 @@
 
 en:
   hello: "Hello world"
+  refinery:
+    header:
+      switch_to_your_website_editor: "Edit Site"

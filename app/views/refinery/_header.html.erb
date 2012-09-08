@@ -1,4 +1,24 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to Refinery::Core.site_name, refinery.root_path, :class => 'brand' %>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+      </a>
 <%= render(:partial => "/refinery/menu", :locals => {
              :dom_id => 'menu',
              :css => 'menu'
            }) %>
+        <% if refinery_user? %>
+        <ul class="nav pull-right">
+             <li><%= site_bar_switch_link -%></li>
+             <li class="divider-vertical"></li>
+             <li><%= link_to t('refinery.site_bar.log_out', site_bar_translate_locale_args),
+                         refinery.destroy_refinery_user_session_path, :id => 'logout' %></li>
+        </ul>
+        <%end%>
+    </div>
+  </div>
+</div>
