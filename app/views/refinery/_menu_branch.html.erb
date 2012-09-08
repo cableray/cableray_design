@@ -2,9 +2,11 @@
   if !!local_assigns[:apply_css] and (classes = menu_branch_css(local_assigns)).any?
     css = "class='#{classes.join(' ')}'".html_safe
   end
+  
+  menu_title=menu_branch.title.split(" - ", 2)
 -%>
 <li<%= ['', css].compact.join(' ').gsub(/\ *$/, '').html_safe %>>
-<%= link_to(menu_branch.title, refinery.url_for(menu_branch.url)) -%>
+<%= link_to(menu_title[0], refinery.url_for(menu_branch.url), title: menu_title[1]||menu_title[0]) -%>
   <% if ( (children = menu_branch.children unless hide_children).present? &&
           (!local_assigns[:menu_levels] || menu_branch.ancestors.length < local_assigns[:menu_levels]) ) -%>
     <ul class='clearfix'>
