@@ -1,0 +1,21 @@
+.span12
+  %ul.breadcrumb
+    %li
+      =link_to "Home", refinery.root_path
+      %span.divider /
+    %li
+      =link_to "Projects", refinery.projects_projects_path
+      %span.divider /
+    %li.active= only_title @project.name
+  %section#hero_unit.hero-unit
+    %h1=raw split_title @project.name
+    %hr
+    .pull-left= image_fu(@project.icon, '200x200')
+    =raw @project.overview
+    -unless @project.repo.empty?
+      .input-prepend
+        =link_to "Visit Repository", @project.repo, class: :btn
+        %span.uneditable-input= @project.repo
+  .row-fluid
+    %section#body.span12
+      =raw @project.description
