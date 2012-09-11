@@ -4,11 +4,7 @@
       =raw @page.content_for(:hero_unit)
   -else
     %section#title.page-header
-      %h1
-        -title=@page.title.split(' - ',2)
-        =title[0]
-        -if title[1]
-          %small= title[1]
+      %h1=raw split_title @page.title
   .row-fluid
     - if @page.content_for :side_body
       %section#body.span8
