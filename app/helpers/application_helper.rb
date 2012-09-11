@@ -1,7 +1,13 @@
 module ApplicationHelper
   def split_title(title, as_html=true)
     title, subtitle = title.split(' - ', 2)
-    if as_html then "#{title} <small>#{subtitle}</small>" else [title, subtitle] end
+    if as_html then 
+      html=::ERB::Util.html_escape(title)
+      html+=" <small>#{::ERB::Util.html_escape(subtitle)}</small>".html_safe if subtitle
+      html
+    else 
+      [title, subtitle] 
+    end
   end
   
   def only_title(title)
