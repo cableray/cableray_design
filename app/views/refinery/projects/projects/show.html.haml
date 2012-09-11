@@ -8,9 +8,9 @@
       %span.divider /
     %li.active= only_title @project.name
   %section#hero_unit.hero-unit
-    %h1=raw split_title @project.name
+    %h1= split_title @project.name
     %hr
-    .pull-left= image_fu(@project.icon, '200x200')
+    .pull-left.project-icon= image_fu(@project.icon, '200x200')
     =raw @project.overview
     -unless @project.repo.empty?
       .input-prepend

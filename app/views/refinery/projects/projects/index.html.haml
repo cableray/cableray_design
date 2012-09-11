@@ -12,9 +12,12 @@
         %h2
           = link_to only_title(project.name), refinery.projects_project_path(project)
           %small= only_subtitle project.name
-        %a.pull-left{href: refinery.projects_project_path(project)}= image_fu(project.icon, '100x100')
+        .pull-left.project-icon
+          =link_to refinery.projects_project_path(project) do 
+            = image_fu(project.icon, '100x100')
         %section.overview
           =raw project.overview
           =link_to " Read More >>", refinery.projects_project_path(project)
-        %hr
+        -unless project == @projects.last
+          %hr
   
