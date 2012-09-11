@@ -3,9 +3,9 @@ module Refinery
     class Project < Refinery::Core::BaseModel
       self.table_name = 'refinery_projects'
 
-      attr_accessible :name, :description, :icon_id, :repo, :position
+      attr_accessible :name, :overview, :description, :icon_id, :repo, :position
 
-      acts_as_indexed :fields => [:name, :description, :repo]
+      acts_as_indexed :fields => [:name, :overview, :description]
 
       validates :name, :presence => true, :uniqueness => true
 
