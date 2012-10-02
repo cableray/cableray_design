@@ -7,6 +7,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
       </a>
+      <div class="nav-collapse">
 <%= render(:partial => "/refinery/menu", :locals => {
              :dom_id => 'menu',
              :css => 'menu'
@@ -19,6 +20,7 @@
                          refinery.destroy_refinery_user_session_path, :id => 'logout' %></li>
         </ul>
         <%end%>
+        </div>
     </div>
   </div>
 </div>
