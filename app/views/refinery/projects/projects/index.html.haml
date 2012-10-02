@@ -11,7 +11,8 @@
       - @projects.each do |project|
         %h2
           = link_to only_title(project.name), refinery.projects_project_path(project)
-          %small= only_subtitle project.name
+          -if only_subtitle project.name
+            %small= only_subtitle project.name
         .pull-left.project-icon
           =link_to refinery.projects_project_path(project) do 
             = image_fu(project.icon, '100x100')
