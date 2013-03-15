@@ -1,0 +1,20 @@
+<nav id="nextprev_article">
+<ul class="pager">
+  <% if @post.prev.present? -%>
+    <li class="previous">
+    <%= link_to ("&#171; " + truncate(@post.prev.title)).html_safe,
+                refinery.blog_post_path(@post.prev) %>
+    </li>
+  <% end -%>
+  <li>
+  <%= link_to t('blog_home', :scope => 'refinery.blog.posts.show'),
+              refinery.blog_root_path,
+              :class => 'home' %>
+  </li>
+  <% if @post.next.present? -%>
+    <li class="next"><%= link_to (truncate(@post.next.title) + " &#187;").html_safe,
+                refinery.blog_post_path(@post.next)%>
+    </li>
+  <% end -%>
+</ul>
+</nav><!-- /next_prev_article -->

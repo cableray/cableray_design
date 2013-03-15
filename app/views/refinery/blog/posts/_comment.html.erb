@@ -1,0 +1,11 @@
+<article class='blog_comment_message media' id='<%= "comment-#{comment.to_param}" %>'>
+  <%= image_tag comment.avatar_url, :alt => comment.name, :class => 'avatar media-object pull-left' %>
+  <div class="media-body">
+  <%= simple_format auto_link(comment.message.to_s) %>
+  <footer class='blog_comment_author muted'>
+    <p>
+      <%= t('by', :scope => 'refinery.blog.posts.comments', :who => comment.name) %>,
+      <%= t('time_ago', :scope => 'refinery.blog.posts.comments', :time => time_ago_in_words(comment.created_at)) %>
+    </p>
+  </footer></div>
+</article>
