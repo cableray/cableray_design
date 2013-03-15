@@ -5,9 +5,9 @@
     - if @page.content_for :side_body
       %section#body.span8
         =raw @page.content_for(:body)
-      %section#side_body.span4
+      %aside#side_body.span4
         =raw @page.content_for(:side_body)
     -else
       %section#body.span12
         =raw @page.content_for(:body)
-  
+
