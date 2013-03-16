@@ -10,6 +10,11 @@ gem 'haml'
 group :development, :test do
   gem 'sqlite3'
 end
+gem 'pg'
+
+group :production do
+  gem 'fog'
+end
 
 
 # Gems used only for assets and not required

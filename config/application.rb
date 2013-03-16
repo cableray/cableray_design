@@ -64,5 +64,8 @@ module CablerayDesign
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # refinery uses rails url helpers in some assets, so the whole rails enviroment is needed
+    config.assets.initialize_on_precompile = true
   end
 end
