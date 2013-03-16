@@ -30,9 +30,38 @@ body {
 //
 // Example:
 // @linkColor: #ff0000;
-body {
-  background-image:url("Gnarl_flipped.jpg");
+
+@bodyBackground: #000;
+@textColor: #fff;
+@linkColor: #B84400;
+@linkColorHover: lighten(@linkColor, 15%);
+@headingsColor: #720068;
+
+@heroUnitBackground: #305C2C;
+@heroUnitHeadingColor: white;
+
+@navbarBackgroundHighlight: black;
+@navbarBackground: #333;
+@navbarText: #239516;
+@navbarLinkColor: @navbarText;
+@navbarLinkColorHover: #65D759;
+@navbarLinkColorActive: @navbarLinkColorHover;
+@navbarBrandColor: @navbarLinkColorHover;
+@headingsSecondaryColor: #117069;
+
+h1,h2,h3,h4,h5,h6 {
+  small{
+    color: @headingsSecondaryColor;
+  }
 }
+
+em {
+  color: #3d9400;
+}
+
+// body {
+//   background-image:url("Gnarl_flipped.jpg");
+// }
 
 .project-icon {
   margin:1em;
@@ -94,3 +123,4 @@ body {
     }
   }
 }
+
