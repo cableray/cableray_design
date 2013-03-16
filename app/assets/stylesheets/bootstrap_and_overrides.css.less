@@ -35,9 +35,10 @@ body {
 @textColor: #fff;
 @linkColor: #B84400;
 @linkColorHover: lighten(@linkColor, 15%);
-@headingsColor: #720068;
+@headingsColor: darken(#239516, 5%);
+@headingsAltColor: #d548a4;
 
-@heroUnitBackground: #305C2C;
+@heroUnitBackground: #333;
 @heroUnitHeadingColor: white;
 
 @navbarBackgroundHighlight: black;
@@ -49,9 +50,47 @@ body {
 @navbarBrandColor: @navbarLinkColorHover;
 @headingsSecondaryColor: #117069;
 
+@btnPrimaryBackground: @linkColorHover;
+@btnPrimaryBackgroundHighlight: @linkColor;
+
 h1,h2,h3,h4,h5,h6 {
   small{
     color: @headingsSecondaryColor;
+  }
+}
+h1 {
+  color: @headingsAltColor;
+}
+
+strong {
+  color: @headingsSecondaryColor;
+}
+
+p:hover:after{
+  content:' _';
+  color:#888;
+}
+
+@-webkit-keyframes blinker {
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+
+.css3-blink {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1s;
+}
+
+p:hover:after{
+  text-decoration: blink;
+  .css3-blink;
+}
+
+.hero-unit h1{
+  small{
+    color: @heroUnitHeadingColor;
   }
 }
 

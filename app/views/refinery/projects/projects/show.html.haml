@@ -1,12 +1,12 @@
 .span12
-  %ul.breadcrumb
-    %li
-      =link_to "Home", refinery.root_path
-      %span.divider /
-    %li
-      =link_to "Projects", refinery.projects_projects_path
-      %span.divider /
-    %li.active= only_title @project.name
+  / %ul.breadcrumb
+  /   %li
+  /     =link_to "Home", refinery.root_path
+  /     %span.divider /
+  /   %li
+  /     =link_to "Projects", refinery.projects_projects_path
+  /     %span.divider /
+  /   %li.active= only_title @project.name
   %section#hero_unit.hero-unit
     %h1= split_title @project.name
     %hr

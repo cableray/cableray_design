@@ -1,11 +1,11 @@
 .span12
   %section#title.page-header
     %h1 Projects
-  %ul.breadcrumb
-    %li
-      =link_to "Home", refinery.root_path
-      %span.divider /
-    %li.active Projects
+  / %ul.breadcrumb
+  /   %li
+  /     =link_to "Home", refinery.root_path
+  /     %span.divider /
+  /   %li.active Projects
   .row-fluid
     %section#body.span12
       - @projects.each do |project|
@@ -14,11 +14,11 @@
           -if only_subtitle project.name
             %small= only_subtitle project.name
         .pull-left.project-icon
-          =link_to refinery.projects_project_path(project) do 
+          =link_to refinery.projects_project_path(project) do
             = image_fu(project.icon, '100x100')
         %section.overview
           =raw project.overview
           =link_to " Read More >>", refinery.projects_project_path(project)
         -unless project == @projects.last
           %hr
-  
+
